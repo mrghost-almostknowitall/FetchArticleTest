@@ -58,14 +58,17 @@ print(caption)
 
 #STEP 3:GENERATE RANDOM IMAGE BASED ON ARTICLE TITLE
 randomword = random.randrange(0,len(titleofArticle.split()),1)
-print("random word => ", randomword)
+print("random word picker => ", randomword)
 keywordForImageGeneration = titleofArticle.split()[randomword]
 print("key word => ", keywordForImageGeneration)
 imageUrl = generateRandomImage(keywordForImageGeneration)
 print(imageUrl)
 
 #STEP 4: PUBLISH CONTENT
-subprocess.call(["taskkill", "/F", "/IM", "ChromeDriver.exe"])
+
+
+
+subprocess.call(["taskkill", "/F", "/IM", "ChromeDriver.exe"]) #kills all background process on test completion
 
 driver.close()
 driver.quit()
